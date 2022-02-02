@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css" >
+    <title>Hangman</title>
+  </head>
+  <body>
+
+    <div id="home">
+      <div class="superdev">Hangman</div>
+      <div id="hidd_word">{{.DisplayWord}}</div>
+      <div class="hang">{{.Trying}}/10</div>
+      <div class="lastp">Proposition précédente: {{.LastPropositions}}</div>
+      <form method="POST">
+        <label class="hang">Proposition: </label>
+        <input type="text" name="user_input" autofocus class="">
+        <input type="submit" class="">
+      </form>
+      <a href="/" class="hang">Retour à l'accueil</a>
+      {{if (ne .Trying 0)}}
+        <img src="../image/hangman{{.Trying}}.png" alt="pendu">
+      {{end}}
+    </div>
+
+  </body>
+</html>
